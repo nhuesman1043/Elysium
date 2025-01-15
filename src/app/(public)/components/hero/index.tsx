@@ -1,5 +1,5 @@
 /* ================================================================
-Description: Index file for public components
+Description: Public hero index
 Author: Noah Huesman
 
 Creation Date: 01/14/2025
@@ -12,7 +12,3 @@ Modification History:
 // ========================================
 
 export * from "./hero"
-
-// ========================================
-//
-// ========================================

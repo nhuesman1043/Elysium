@@ -1,5 +1,5 @@
 /* ================================================================
-Description: Public header index
+Description: Public top wave index
 Author: Noah Huesman
 
 Creation Date: 01/14/2025
@@ -8,7 +8,7 @@ Modification History:
 ================================================================ */
 
 // ========================================
-// HEADER
+// TOP WAVE
 // ========================================
 
-export * from "./header"
+export * from "./top-wave"

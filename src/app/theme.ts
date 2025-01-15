@@ -12,7 +12,12 @@ Modification History:
 // ========================================
 
 // Mantine
-import { createTheme, DEFAULT_THEME, mergeMantineTheme } from "@mantine/core"
+import {
+	createTheme,
+	DEFAULT_THEME,
+	mergeMantineTheme,
+	colorsTuple,
+} from "@mantine/core"
 
 // ========================================
 // THEME
@@ -21,8 +26,8 @@ import { createTheme, DEFAULT_THEME, mergeMantineTheme } from "@mantine/core"
 // Theme override
 const themeOverride = createTheme({
 	// Primary color
-	primaryColor: "accent-primary",
-	primaryShade: 8,
+	primaryColor: "accentPrimary",
+	primaryShade: 0,
 
 	// Fonts
 	fontFamily: "Poppins",
@@ -30,19 +35,20 @@ const themeOverride = createTheme({
 
 	// Colors
 	colors: {
-		// Purple
-		"accent-primary": [
-			"#f9f0fd",
-			"#ebdef0",
-			"#d5bbdf",
-			"#bd95cd",
-			"#aa75be",
-			"#9d61b5",
-			"#9856b1",
-			"#84479c",
-			"#763e8c",
-			"#67337b",
-		],
+		// Lapis lazuli
+		accentPrimary: colorsTuple("#22577A"),
+
+		// Keppel
+		accentSecondary: colorsTuple("#3BA99C"),
+
+		// Gray
+		backgroundPrimary: colorsTuple("#18191A"),
+
+		// Dark gray
+		backgroundSecondary: colorsTuple("#222123"),
+
+		// White
+		textPrimary: colorsTuple("#F8F8F2"),
 	},
 })
 
