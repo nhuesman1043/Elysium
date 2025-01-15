@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Variables */
+:root {
+	--wave-speed: 50s;
+}
+
 /* Base body styles for page transitions */
 body {
 	transition-property: opacity, transform;

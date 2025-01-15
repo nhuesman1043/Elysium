@@ -1,5 +1,5 @@
 /* ================================================================
-Description: Index file for public components
+Description: Public bottom wave index
 Author: Noah Huesman
 
 Creation Date: 01/14/2025
@@ -8,11 +8,7 @@ Modification History:
 ================================================================ */
 
 // ========================================
-// HERO
+// BOTTOM WAVE
 // ========================================
 
-export * from "./hero"
-
-// ========================================
-//
-// ========================================
+export * from "./bottom-wave"

@@ -1,0 +1,10 @@
+/* Hero page button animation */
+.button {
+	border: 2px solid var(--mantine-color-backgroundSecondary-0);
+	box-shadow: inset 0 0 20px var(--mantine-color-backgroundSecondary-0);
+}
+
+.button:hover {
+	border: 2px solid var(--mantine-color-accentPrimary-0);
+	box-shadow: 0 0 30px var(--mantine-color-accentPrimary-0);
+}

@@ -39,7 +39,7 @@ import { Poppins } from "next/font/google"
 // ========================================
 
 export const metadata: Metadata = {
-	title: "Elysium",
+	title: "Noah Huesman",
 	description: "Noah Huesman's portfolio website",
 }
 
@@ -62,10 +62,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en" {...mantineHtmlProps} className={poppins.className}>
 			<head>
-				<ColorSchemeScript defaultColorScheme="auto" />
+				<ColorSchemeScript forceColorScheme="dark" />
 			</head>
 			<body>
-				<MantineProvider defaultColorScheme="auto" theme={theme}>
+				<MantineProvider forceColorScheme="dark" theme={theme}>
 					<Notifications autoClose={5000} />
 					{children}
 				</MantineProvider>

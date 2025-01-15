@@ -1,5 +1,5 @@
 /* ================================================================
-Description: Index file for public components
+Description: Public call to action index
 Author: Noah Huesman
 
 Creation Date: 01/14/2025
@@ -8,11 +8,7 @@ Modification History:
 ================================================================ */
 
 // ========================================
-// HERO
+// CALL TO ACTION
 // ========================================
 
-export * from "./hero"
-
-// ========================================
-//
-// ========================================
+export * from "./call-to-action"
