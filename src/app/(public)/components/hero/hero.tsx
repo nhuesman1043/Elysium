@@ -46,11 +46,11 @@ export function Hero() {
 
 	// Render
 	return (
-		<Container id="hero" fluid>
-			<div className="absolute left-0 top-0 z-0 h-screen w-screen">
+		<Container id="hero" fluid className="h-dvh">
+			<div className="absolute left-0 top-0 z-0 h-[75vh] w-screen sm:h-dvh">
 				<TopWave colors={topWaveGradient} />
 			</div>
-			<Center className="h-screen">
+			<Center className="h-dvh">
 				<Stack>
 					{/* Mobile */}
 					<Stack hiddenFrom="sm">
@@ -73,7 +73,7 @@ export function Hero() {
 					<CallToAction />
 				</Stack>
 			</Center>
-			<div className="absolute bottom-0 left-0 z-0 h-screen w-screen">
+			<div className="absolute bottom-0 left-0 z-0 h-[75vh] w-screen sm:h-lvh">
 				<BottomWave colors={bottomWaveGradient} />
 			</div>
 		</Container>
