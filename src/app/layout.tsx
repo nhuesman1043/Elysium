@@ -31,7 +31,7 @@ import { Notifications } from "@mantine/notifications"
 import { theme } from "./theme"
 
 // Next
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Poppins } from "next/font/google"
 
 // ========================================
@@ -41,6 +41,16 @@ import { Poppins } from "next/font/google"
 export const metadata: Metadata = {
 	title: "Noah Huesman",
 	description: "Noah Huesman's portfolio website",
+}
+
+// ========================================
+// VIEWPORT
+// ========================================
+
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+	userScalable: false,
 }
 
 // ========================================

@@ -47,8 +47,8 @@ const themeOverride = createTheme({
 		// Dark gray
 		backgroundSecondary: colorsTuple("#222123"),
 
-		// White
-		textPrimary: colorsTuple("#F8F8F2"),
+		// Anti-flash white
+		textPrimary: colorsTuple("#EEF0F2"),
 	},
 })
 

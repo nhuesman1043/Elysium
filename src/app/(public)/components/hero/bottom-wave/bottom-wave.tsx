@@ -5,72 +5,102 @@ Author: Noah Huesman
 Creation Date: 01/14/2025
 Modification History:
 #1 (01/14/2025) - Initial creation - Noah Huesman
+#2 (01/16/2025) - GSAP integration - Noah Huesman
 ================================================================ */
+
+// ========================================
+// DIRECTIVES
+// ========================================
+
+"use client"
 
 // ========================================
 // IMPORTS
 // ========================================
 
 // CSS
-import classes from "./bottom-wave.module.css"
+//import classes from "./bottom-wave.module.css"
+
+// Wave paths
+import wavePaths from "../wave-paths.json"
+
+// React
+import React, { useEffect, useRef } from "react"
+
+// GSAP
+import { gsap } from "gsap"
 
 // ========================================
 // BOTTOM WAVE
 // ========================================
 
 export function BottomWave({ colors }: { colors: string[] }) {
+	// Path references
+	const waveRefs = useRef<(SVGPathElement | null)[]>(
+		new Array(Object.values(wavePaths.bottomWaves).length).fill(null)
+	)
+
+	// Animation references for cleanup
+	const waveAnimations = useRef<gsap.core.Timeline[]>([])
+
+	// Wave animation
+	useEffect(() => {
+		// Clear any existing animations before starting new ones
+		waveAnimations.current.forEach((animation) => animation.kill())
+		waveAnimations.current = []
+
+		// Loop through each bottom wave
+		Object.values(wavePaths.bottomWaves).forEach((paths, index) => {
+			// Get the current wave element
+			const waveElement = waveRefs.current[index]
+
+			// Animate the wave if it exists
+			if (waveElement) {
+				// Initialize GSAP animation timeline for this wave
+				const waveAnimation = gsap.timeline({
+					repeat: -1,
+					repeatDelay: 0,
+				})
+
+				// Loop through each path array in the bottom wave and animate between the paths for this wave
+				paths.forEach((path, pathIndex) => {
+					const nextPath = paths[(pathIndex + 1) % paths.length]
+					waveAnimation.to(waveElement, {
+						duration: 6,
+						attr: { d: nextPath },
+						ease: "power1.inOut",
+					})
+				})
+
+				// Store the animation for cleanup
+				waveAnimations.current.push(waveAnimation)
+			}
+		})
+
+		// Cleanup animations on component unmount
+		return () => {
+			waveAnimations.current.forEach((animation) => animation.kill())
+		}
+	}, [])
+
 	// Render
 	return (
 		<svg
-			id="visual"
 			viewBox="0 0 900 600"
-			xmlns="http://www.w3.org/2000/svg"
-			xmlnsXlink="http://www.w3.org/1999/xlink"
-			version="1.1"
 			preserveAspectRatio="none"
-			width="100%"
-			height="100%"
+			className="size-full"
 		>
-			<path
-				className={classes.bottomWave1}
-				d="M0 409L18.8 413.7C37.7 418.3 75.3 427.7 112.8 429.3C150.3 431 187.7 425 225.2 425.7C262.7 426.3 300.3 433.7 337.8 433.5C375.3 433.3 412.7 425.7 450.2 426.8C487.7 428 525.3 438 562.8 441.5C600.3 445 637.7 442 675.2 432.7C712.7 423.3 750.3 407.7 787.8 408.7C825.3 409.7 862.7 427.3 881.3 436.2L900 445L900 601L881.3 601C862.7 601 825.3 601 787.8 601C750.3 601 712.7 601 675.2 601C637.7 601 600.3 601 562.8 601C525.3 601 487.7 601 450.2 601C412.7 601 375.3 601 337.8 601C300.3 601 262.7 601 225.2 601C187.7 601 150.3 601 112.8 601C75.3 601 37.7 601 18.8 601L0 601Z"
-				fill={colors[7]}
-			></path>
-			<path
-				className={classes.bottomWave2}
-				d="M0 440L18.8 443C37.7 446 75.3 452 112.8 459.8C150.3 467.7 187.7 477.3 225.2 474.8C262.7 472.3 300.3 457.7 337.8 449.8C375.3 442 412.7 441 450.2 442.8C487.7 444.7 525.3 449.3 562.8 456.2C600.3 463 637.7 472 675.2 465.3C712.7 458.7 750.3 436.3 787.8 429.8C825.3 423.3 862.7 432.7 881.3 437.3L900 442L900 601L881.3 601C862.7 601 825.3 601 787.8 601C750.3 601 712.7 601 675.2 601C637.7 601 600.3 601 562.8 601C525.3 601 487.7 601 450.2 601C412.7 601 375.3 601 337.8 601C300.3 601 262.7 601 225.2 601C187.7 601 150.3 601 112.8 601C75.3 601 37.7 601 18.8 601L0 601Z"
-				fill={colors[6]}
-			></path>
-			<path
-				className={classes.bottomWave3}
-				d="M0 496L18.8 491.5C37.7 487 75.3 478 112.8 476.8C150.3 475.7 187.7 482.3 225.2 482.3C262.7 482.3 300.3 475.7 337.8 467.5C375.3 459.3 412.7 449.7 450.2 444.3C487.7 439 525.3 438 562.8 444.3C600.3 450.7 637.7 464.3 675.2 473.5C712.7 482.7 750.3 487.3 787.8 483.8C825.3 480.3 862.7 468.7 881.3 462.8L900 457L900 601L881.3 601C862.7 601 825.3 601 787.8 601C750.3 601 712.7 601 675.2 601C637.7 601 600.3 601 562.8 601C525.3 601 487.7 601 450.2 601C412.7 601 375.3 601 337.8 601C300.3 601 262.7 601 225.2 601C187.7 601 150.3 601 112.8 601C75.3 601 37.7 601 18.8 601L0 601Z"
-				fill={colors[5]}
-			></path>
-			<path
-				className={classes.bottomWave4}
-				d="M0 494L18.8 491.2C37.7 488.3 75.3 482.7 112.8 486.7C150.3 490.7 187.7 504.3 225.2 507.3C262.7 510.3 300.3 502.7 337.8 502.3C375.3 502 412.7 509 450.2 509C487.7 509 525.3 502 562.8 495.2C600.3 488.3 637.7 481.7 675.2 486.5C712.7 491.3 750.3 507.7 787.8 514.2C825.3 520.7 862.7 517.3 881.3 515.7L900 514L900 601L881.3 601C862.7 601 825.3 601 787.8 601C750.3 601 712.7 601 675.2 601C637.7 601 600.3 601 562.8 601C525.3 601 487.7 601 450.2 601C412.7 601 375.3 601 337.8 601C300.3 601 262.7 601 225.2 601C187.7 601 150.3 601 112.8 601C75.3 601 37.7 601 18.8 601L0 601Z"
-				fill={colors[4]}
-			></path>
-			<path
-				className={classes.bottomWave5}
-				d="M0 517L18.8 513.8C37.7 510.7 75.3 504.3 112.8 501.7C150.3 499 187.7 500 225.2 501.2C262.7 502.3 300.3 503.7 337.8 508.2C375.3 512.7 412.7 520.3 450.2 519C487.7 517.7 525.3 507.3 562.8 508.7C600.3 510 637.7 523 675.2 522C712.7 521 750.3 506 787.8 501.8C825.3 497.7 862.7 504.3 881.3 507.7L900 511L900 601L881.3 601C862.7 601 825.3 601 787.8 601C750.3 601 712.7 601 675.2 601C637.7 601 600.3 601 562.8 601C525.3 601 487.7 601 450.2 601C412.7 601 375.3 601 337.8 601C300.3 601 262.7 601 225.2 601C187.7 601 150.3 601 112.8 601C75.3 601 37.7 601 18.8 601L0 601Z"
-				fill={colors[3]}
-			></path>
-			<path
-				className={classes.bottomWave6}
-				d="M0 523L18.8 527.5C37.7 532 75.3 541 112.8 544.3C150.3 547.7 187.7 545.3 225.2 542.5C262.7 539.7 300.3 536.3 337.8 531.8C375.3 527.3 412.7 521.7 450.2 521.2C487.7 520.7 525.3 525.3 562.8 529.3C600.3 533.3 637.7 536.7 675.2 540C712.7 543.3 750.3 546.7 787.8 543C825.3 539.3 862.7 528.7 881.3 523.3L900 518L900 601L881.3 601C862.7 601 825.3 601 787.8 601C750.3 601 712.7 601 675.2 601C637.7 601 600.3 601 562.8 601C525.3 601 487.7 601 450.2 601C412.7 601 375.3 601 337.8 601C300.3 601 262.7 601 225.2 601C187.7 601 150.3 601 112.8 601C75.3 601 37.7 601 18.8 601L0 601Z"
-				fill={colors[2]}
-			></path>
-			<path
-				className={classes.bottomWave7}
-				d="M0 566L18.8 565.7C37.7 565.3 75.3 564.7 112.8 561.5C150.3 558.3 187.7 552.7 225.2 553.5C262.7 554.3 300.3 561.7 337.8 565.7C375.3 569.7 412.7 570.3 450.2 570C487.7 569.7 525.3 568.3 562.8 562.2C600.3 556 637.7 545 675.2 543.2C712.7 541.3 750.3 548.7 787.8 552.3C825.3 556 862.7 556 881.3 556L900 556L900 601L881.3 601C862.7 601 825.3 601 787.8 601C750.3 601 712.7 601 675.2 601C637.7 601 600.3 601 562.8 601C525.3 601 487.7 601 450.2 601C412.7 601 375.3 601 337.8 601C300.3 601 262.7 601 225.2 601C187.7 601 150.3 601 112.8 601C75.3 601 37.7 601 18.8 601L0 601Z"
-				fill={colors[1]}
-			></path>
-			<path
-				className={classes.bottomWave8}
-				d="M0 568L18.8 568.3C37.7 568.7 75.3 569.3 112.8 569.3C150.3 569.3 187.7 568.7 225.2 566.3C262.7 564 300.3 560 337.8 562.8C375.3 565.7 412.7 575.3 450.2 575.7C487.7 576 525.3 567 562.8 567.2C600.3 567.3 637.7 576.7 675.2 578.5C712.7 580.3 750.3 574.7 787.8 574.7C825.3 574.7 862.7 580.3 881.3 583.2L900 586L900 601L881.3 601C862.7 601 825.3 601 787.8 601C750.3 601 712.7 601 675.2 601C637.7 601 600.3 601 562.8 601C525.3 601 487.7 601 450.2 601C412.7 601 375.3 601 337.8 601C300.3 601 262.7 601 225.2 601C187.7 601 150.3 601 112.8 601C75.3 601 37.7 601 18.8 601L0 601Z"
-				fill={colors[0]}
-			></path>
+			{/* Loop through each bottom wave and draw the initial path - Index 0 */}
+			{Object.values(wavePaths.bottomWaves).map((paths, index) => (
+				<path
+					key={index}
+					ref={(element) => {
+						waveRefs.current[index] = element
+					}}
+					d={paths[0]}
+					fill={colors[colors.length - 1 - index]} // Reverse the colors array
+				></path>
+			))}
 		</svg>
 	)
 }
