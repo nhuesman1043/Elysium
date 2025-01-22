@@ -6,6 +6,7 @@ Creation Date: 01/02/2025
 Modification History:
 #1 (01/02/2025) - Initial creation - Noah Huesman
 #2 (01/06/2025) - Added notifications - Noah Huesman
+#3 (01/21/2025) - Added smooth scroll - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -14,6 +15,12 @@ Modification History:
 
 // CSS
 import "./globals.css"
+
+// Lenis
+import "lenis/dist/lenis.css"
+
+// Scroll wrapper
+import ScrollWrapper from "@/app/scroll-wrapper"
 
 // Mantine
 import "@mantine/core/styles.css"
@@ -77,7 +84,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 			<body>
 				<MantineProvider forceColorScheme="dark" theme={theme}>
 					<Notifications autoClose={5000} />
-					{children}
+					<ScrollWrapper>{children}</ScrollWrapper>
 				</MantineProvider>
 			</body>
 		</html>

@@ -26,9 +26,6 @@ import { Button } from "@mantine/core"
 // Tabler icons
 import { IconArrowDown } from "@tabler/icons-react"
 
-// React scroll
-import { Link } from "react-scroll"
-
 // Theme
 import { theme } from "@/app/theme"
 
@@ -37,31 +34,25 @@ import { theme } from "@/app/theme"
 // ========================================
 
 export function CallToAction() {
+	// Button props shared by both buttons
+	const buttonProps = {
+		variant: "transparent",
+		rightSection: <IconArrowDown size={20} stroke={1.8} />,
+		className: classes.button,
+		c: theme.colors.textPrimary[0],
+	}
+
 	// Render
 	return (
-		<Link to="about" smooth duration={1000} className="z-50">
+		<a href="#about" className="z-50">
 			{/* Mobile */}
-			<Button
-				variant="transparent"
-				rightSection={<IconArrowDown size={20} stroke={1.8} />}
-				size="md"
-				className={classes.button}
-				c={theme.colors.textPrimary[0]}
-				hiddenFrom="sm"
-			>
+			<Button {...buttonProps} size="md" hiddenFrom="sm">
 				Learn more
 			</Button>
 			{/* Desktop */}
-			<Button
-				variant="transparent"
-				rightSection={<IconArrowDown size={20} stroke={1.8} />}
-				size="lg"
-				className={classes.button}
-				c={theme.colors.textPrimary[0]}
-				visibleFrom="sm"
-			>
+			<Button {...buttonProps} size="lg" visibleFrom="sm">
 				Learn more
 			</Button>
-		</Link>
+		</a>
 	)
 }

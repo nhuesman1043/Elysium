@@ -38,44 +38,48 @@ export function Hero() {
 	const topWaveGradient = chroma
 		.scale([theme.colors.accentPrimary[0], theme.colors.accentSecondary[0]])
 		.colors(8)
+		.reverse()
 
 	// Bottom wave gradient
 	const bottomWaveGradient = chroma
 		.scale([theme.colors.accentPrimary[0], theme.colors.accentSecondary[0]])
 		.colors(8)
+		.reverse()
 
 	// Render
 	return (
-		<Container id="hero" fluid className="h-dvh">
-			<div className="absolute left-0 top-0 z-0 h-[75vh] w-screen sm:h-dvh">
-				<TopWave colors={topWaveGradient} />
-			</div>
-			<Center className="h-dvh">
-				<Stack>
-					{/* Mobile */}
-					<Stack hiddenFrom="sm">
-						<Title order={2} size={25}>
-							Hi, I&apos;m Noah Huesman.
-						</Title>
-						<Title order={3} size={15}>
-							Welcome to my portfolio.
-						</Title>
+		<div id="hero" className="relative h-dvh w-screen">
+			<Container fluid bg={theme.colors.backgroundPrimary[0]}>
+				<div className="absolute left-0 top-0 h-[75vh] w-screen sm:h-dvh">
+					<TopWave colors={topWaveGradient} />
+				</div>
+				<Center className="h-dvh">
+					<Stack>
+						{/* Mobile */}
+						<Stack hiddenFrom="sm">
+							<Title order={2} size={25}>
+								Hi, I&apos;m Noah Huesman.
+							</Title>
+							<Title order={3} size={15}>
+								Welcome to my portfolio.
+							</Title>
+						</Stack>
+						{/* Desktop */}
+						<Stack visibleFrom="sm">
+							<Title order={1} size={35}>
+								Hi, I&apos;m Noah Huesman.
+							</Title>
+							<Title order={2} size={25}>
+								Welcome to my portfolio.
+							</Title>
+						</Stack>
+						<CallToAction />
 					</Stack>
-					{/* Desktop */}
-					<Stack visibleFrom="sm">
-						<Title order={1} size={35}>
-							Hi, I&apos;m Noah Huesman.
-						</Title>
-						<Title order={2} size={25}>
-							Welcome to my portfolio.
-						</Title>
-					</Stack>
-					<CallToAction />
-				</Stack>
-			</Center>
-			<div className="absolute bottom-0 left-0 z-0 h-[75vh] w-screen sm:h-lvh">
-				<BottomWave colors={bottomWaveGradient} />
-			</div>
-		</Container>
+				</Center>
+				<div className="absolute bottom-0 left-0 h-[75vh] w-screen sm:h-lvh">
+					<BottomWave colors={bottomWaveGradient} />
+				</div>
+			</Container>
+		</div>
 	)
 }

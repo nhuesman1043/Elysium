@@ -12,10 +12,10 @@ Modification History:
 // ========================================
 
 // Components
-import { Hero } from "./components"
+import { Hero, Header, About } from "./components"
 
 // Mantine
-import { Container, darken } from "@mantine/core"
+import { Stack } from "@mantine/core"
 
 // Theme
 import { theme } from "@/app/theme"
@@ -27,12 +27,16 @@ import { theme } from "@/app/theme"
 export default function PublicPage() {
 	// Render
 	return (
-		<Container
-			fluid
-			bg={darken(theme.colors.backgroundPrimary[0], 0.25)}
+		<Stack
+			bg={theme.colors.backgroundSecondary[0]}
 			c={theme.colors.textPrimary[0]}
+			gap={0}
 		>
 			<Hero />
-		</Container>
+			<Stack>
+				<Header />
+				<About />
+			</Stack>
+		</Stack>
 	)
 }
