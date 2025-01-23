@@ -38,8 +38,9 @@ export const useScroll = () => {
 	useEffect(() => {
 		// Initialize Lenis
 		const lenis = new Lenis({
-			lerp: 0.1, // Smoothing factor
-			smoothWheel: true, // Enable smooth scrolling on wheel events
+			lerp: 0.1,
+			smoothWheel: true,
+			syncTouch: true,
 		})
 
 		// Store the instance in the ref
