@@ -6,6 +6,7 @@ Creation Date: 01/14/2025
 Modification History:
 #1 (01/14/2025) - Initial creation - Noah Huesman
 #2 (01/16/2025) - GSAP integration - Noah Huesman
+#3 (01/20/2025) - Fade-in effect added - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -98,7 +99,7 @@ export function TopWave({ colors }: { colors: string[] }) {
 						waveRefs.current[index] = element
 					}}
 					d={paths[0]}
-					fill={colors[colors.length - 1 - index]} // Reverse the colors array
+					fill={colors[index]}
 				></path>
 			))}
 		</svg>

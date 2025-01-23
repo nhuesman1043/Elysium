@@ -5,6 +5,7 @@ Author: Noah Huesman
 Creation Date: 01/14/2025
 Modification History:
 #1 (01/14/2025) - Initial creation - Noah Huesman
+#2 (01/22/2025) - Added components - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -12,10 +13,17 @@ Modification History:
 // ========================================
 
 // Components
-import { Hero } from "./components"
+import {
+	Hero,
+	Header,
+	About,
+	Experience,
+	Projects,
+	Contact,
+} from "./components"
 
 // Mantine
-import { Container, darken } from "@mantine/core"
+import { Stack } from "@mantine/core"
 
 // Theme
 import { theme } from "@/app/theme"
@@ -27,12 +35,19 @@ import { theme } from "@/app/theme"
 export default function PublicPage() {
 	// Render
 	return (
-		<Container
-			fluid
-			bg={darken(theme.colors.backgroundPrimary[0], 0.25)}
+		<Stack
+			bg={theme.colors.backgroundSecondary[0]}
 			c={theme.colors.textPrimary[0]}
+			gap={0}
 		>
 			<Hero />
-		</Container>
+			<Stack>
+				<Header />
+				<About />
+				<Experience />
+				<Projects />
+				<Contact />
+			</Stack>
+		</Stack>
 	)
 }

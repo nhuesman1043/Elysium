@@ -27,7 +27,6 @@ import {
 const themeOverride = createTheme({
 	// Primary color
 	primaryColor: "accentPrimary",
-	primaryShade: 0,
 
 	// Fonts
 	fontFamily: "Poppins",
