@@ -48,7 +48,7 @@ export function Hero() {
 
 	// Render
 	return (
-		<div id="hero" className="relative h-dvh w-screen">
+		<div id="hero" data-section className="relative h-dvh w-screen">
 			<Container fluid bg={theme.colors.backgroundPrimary[0]}>
 				<div className="absolute left-0 top-0 h-[75vh] w-screen sm:h-dvh">
 					<TopWave colors={topWaveGradient} />

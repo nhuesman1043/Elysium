@@ -29,22 +29,31 @@ import { IconArrowDown } from "@tabler/icons-react"
 // Theme
 import { theme } from "@/app/theme"
 
+// Hooks library
+import { useScroll } from "@/library/hooks"
+
 // ========================================
 // CALL TO ACTION
 // ========================================
 
 export function CallToAction() {
+	// Scroll hook
+	const { scrollToId } = useScroll()
+
 	// Button props shared by both buttons
 	const buttonProps = {
 		variant: "transparent",
 		rightSection: <IconArrowDown size={20} stroke={1.8} />,
 		className: classes.button,
 		c: theme.colors.textPrimary[0],
+		onClick: () => {
+			scrollToId("about")
+		},
 	}
 
 	// Render
 	return (
-		<a href="#about" className="z-50">
+		<div className="z-50">
 			{/* Mobile */}
 			<Button {...buttonProps} size="md" hiddenFrom="sm">
 				Learn more
@@ -53,6 +62,6 @@ export function CallToAction() {
 			<Button {...buttonProps} size="lg" visibleFrom="sm">
 				Learn more
 			</Button>
-		</a>
+		</div>
 	)
 }

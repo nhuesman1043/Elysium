@@ -5,6 +5,7 @@ Author: Noah Huesman
 Creation Date: 01/14/2025
 Modification History:
 #1 (01/14/2025) - Initial creation - Noah Huesman
+#2 (01/22/2025) - Added components - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -12,7 +13,14 @@ Modification History:
 // ========================================
 
 // Components
-import { Hero, Header, About } from "./components"
+import {
+	Hero,
+	Header,
+	About,
+	Experience,
+	Projects,
+	Contact,
+} from "./components"
 
 // Mantine
 import { Stack } from "@mantine/core"
@@ -36,6 +44,9 @@ export default function PublicPage() {
 			<Stack>
 				<Header />
 				<About />
+				<Experience />
+				<Projects />
+				<Contact />
 			</Stack>
 		</Stack>
 	)

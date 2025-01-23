@@ -18,19 +18,31 @@ Modification History:
 // ========================================
 
 // CSS
-// import classes from "./header-link.module.css"
+import classes from "./link.module.css"
 
 // Mantine
-import { Anchor, Text } from "@mantine/core"
+import { Text } from "@mantine/core"
+
+// Hooks library
+import { useScroll } from "@/library/hooks"
 
 // ========================================
-// HEADER LINK
+// LINK
 // ========================================
 
-export function HeaderLink({ name, id }: { name: string; id: string }) {
+export function Link({ name, id }: { name: string; id: string }) {
+	// Scroll hook
+	const { activeSection, scrollToId } = useScroll()
+
+	// Determine if the link is active
+	const isActive = activeSection === id
+
 	// Render
 	return (
-		<Anchor href={id}>
+		<div
+			onClick={() => scrollToId(id)}
+			className={`${classes.link} ${isActive ? classes.active : ""}`}
+		>
 			{/* Mobile */}
 			<Text size="md" hiddenFrom="sm">
 				{name}
@@ -39,6 +51,6 @@ export function HeaderLink({ name, id }: { name: string; id: string }) {
 			<Text size="xl" visibleFrom="sm">
 				{name}
 			</Text>
-		</Anchor>
+		</div>
 	)
 }

@@ -19,9 +19,6 @@ import "./globals.css"
 // Lenis
 import "lenis/dist/lenis.css"
 
-// Scroll wrapper
-import ScrollWrapper from "@/app/scroll-wrapper"
-
 // Mantine
 import "@mantine/core/styles.css"
 import {
@@ -84,7 +81,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 			<body>
 				<MantineProvider forceColorScheme="dark" theme={theme}>
 					<Notifications autoClose={5000} />
-					<ScrollWrapper>{children}</ScrollWrapper>
+					{children}
 				</MantineProvider>
 			</body>
 		</html>

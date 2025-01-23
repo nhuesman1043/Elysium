@@ -1,14 +1,14 @@
 /* ================================================================
-Description: Header link index
+Description: Public contact index
 Author: Noah Huesman
 
-Creation Date: 01/17/2025
+Creation Date: 01/22/2025
 Modification History:
-#1 (01/17/2025) - Initial creation - Noah Huesman
+#1 (01/22/2025) - Initial creation - Noah Huesman
 ================================================================ */
 
 // ========================================
-// LINK
+// CONTACT
 // ========================================
 
-export * from "./link"
+export * from "./contact"

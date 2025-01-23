@@ -1,14 +1,14 @@
 /* ================================================================
-Description: Header link index
+Description: Index file for the hooks library
 Author: Noah Huesman
 
-Creation Date: 01/17/2025
+Creation Date: 01/13/2025
 Modification History:
-#1 (01/17/2025) - Initial creation - Noah Huesman
+#1 (01/13/2025) - Initial creation - Noah Huesman
 ================================================================ */
 
 // ========================================
-// LINK
+// USE SCROLL
 // ========================================
 
-export * from "./link"
+export * from "./use-scroll"

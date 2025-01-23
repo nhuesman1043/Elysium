@@ -1,5 +1,5 @@
 /* ================================================================
-Description: About
+Description: Projects
 Author: Noah Huesman
 
 Creation Date: 01/17/2025
@@ -12,7 +12,7 @@ Modification History:
 // ========================================
 
 // CSS
-// import classes from "./about.module.css"
+// import classes from "./projects.module.css"
 
 // Components
 
@@ -23,14 +23,14 @@ import { Container } from "@mantine/core"
 //import { theme } from "@/app/theme"
 
 // ========================================
-// ABOUT
+// PROJECTS
 // ========================================
 
-export function About() {
+export function Projects() {
 	// Render
 	return (
-		<div id="about" data-section className="relative h-screen">
-			<Container fluid>about</Container>
+		<div id="projects" data-section className="relative h-[200vh]">
+			<Container fluid>projects</Container>
 		</div>
 	)
 }

@@ -1,5 +1,5 @@
 /* ================================================================
-Description: About
+Description: Contact
 Author: Noah Huesman
 
 Creation Date: 01/17/2025
@@ -12,7 +12,7 @@ Modification History:
 // ========================================
 
 // CSS
-// import classes from "./about.module.css"
+// import classes from "./contact.module.css"
 
 // Components
 
@@ -23,14 +23,14 @@ import { Container } from "@mantine/core"
 //import { theme } from "@/app/theme"
 
 // ========================================
-// ABOUT
+// CONTACT
 // ========================================
 
-export function About() {
+export function Contact() {
 	// Render
 	return (
-		<div id="about" data-section className="relative h-screen">
-			<Container fluid>about</Container>
+		<div id="contact" data-section className="relative h-screen">
+			<Container fluid>contact</Container>
 		</div>
 	)
 }

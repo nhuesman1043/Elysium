@@ -15,7 +15,7 @@ Modification History:
 // import classes from "./header.module.css"
 
 // Components
-import { HeaderLink } from "./link"
+import { Link } from "./link"
 
 // Mantine
 import { Container, Group } from "@mantine/core"
@@ -30,10 +30,10 @@ import { theme } from "@/app/theme"
 export function Header() {
 	// Define links
 	const links = [
-		{ name: "About", id: "#about" },
-		{ name: "Experience", id: "#experience" },
-		{ name: "Projects", id: "#projects" },
-		{ name: "Contact", id: "#contact" },
+		{ name: "About", id: "about" },
+		{ name: "Experience", id: "experience" },
+		{ name: "Projects", id: "projects" },
+		{ name: "Contact", id: "contact" },
 	]
 
 	// Render
@@ -43,13 +43,13 @@ export function Header() {
 				{/* Mobile */}
 				<Group justify="center" px="sm" h="100%" hiddenFrom="sm">
 					{links.map((link, index) => (
-						<HeaderLink key={index} name={link.name} id={link.id} />
+						<Link key={index} name={link.name} id={link.id} />
 					))}
 				</Group>
 				{/* Desktop */}
 				<Group justify="flex-end" px="lg" h="100%" visibleFrom="sm">
 					{links.map((link, index) => (
-						<HeaderLink key={index} name={link.name} id={link.id} />
+						<Link key={index} name={link.name} id={link.id} />
 					))}
 				</Group>
 			</Container>

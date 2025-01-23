@@ -1,10 +1,10 @@
 /* ================================================================
-Description: About
+Description: Experience
 Author: Noah Huesman
 
-Creation Date: 01/17/2025
+Creation Date: 01/22/2025
 Modification History:
-#1 (01/17/2025) - Initial creation - Noah Huesman
+#1 (01/22/2025) - Initial creation - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -12,7 +12,7 @@ Modification History:
 // ========================================
 
 // CSS
-// import classes from "./about.module.css"
+// import classes from "./experience.module.css"
 
 // Components
 
@@ -23,14 +23,14 @@ import { Container } from "@mantine/core"
 //import { theme } from "@/app/theme"
 
 // ========================================
-// ABOUT
+// EXPERIENCE
 // ========================================
 
-export function About() {
+export function Experience() {
 	// Render
 	return (
-		<div id="about" data-section className="relative h-screen">
-			<Container fluid>about</Container>
+		<div id="experience" data-section className="relative h-screen">
+			<Container fluid>experience</Container>
 		</div>
 	)
 }
