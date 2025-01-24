@@ -29,7 +29,7 @@ import { Container } from "@mantine/core"
 export function About() {
 	// Render
 	return (
-		<div id="about" data-section className="relative h-screen">
+		<div id="about" data-section className="h-screen">
 			<Container fluid>about</Container>
 		</div>
 	)

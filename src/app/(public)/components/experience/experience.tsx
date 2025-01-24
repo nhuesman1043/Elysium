@@ -29,7 +29,7 @@ import { Container } from "@mantine/core"
 export function Experience() {
 	// Render
 	return (
-		<div id="experience" data-section className="relative h-screen">
+		<div id="experience" data-section className="h-screen">
 			<Container fluid>experience</Container>
 		</div>
 	)
