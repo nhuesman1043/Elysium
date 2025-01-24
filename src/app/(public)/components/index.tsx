@@ -5,8 +5,6 @@ Author: Noah Huesman
 Creation Date: 01/14/2025
 Modification History:
 #1 (01/14/2025) - Initial creation - Noah Huesman
-#2 (01/16/2025) - Added header - Noah Huesman
-#3 (01/17/2025) - Added about - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -14,6 +12,12 @@ Modification History:
 // ========================================
 
 export * from "./hero"
+
+// =========================================
+// PARTICLES BACKGROUND
+// ========================================
+
+export * from "./particles-background"
 
 // ========================================
 // HEADER

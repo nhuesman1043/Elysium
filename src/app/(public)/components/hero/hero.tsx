@@ -50,7 +50,7 @@ export function Hero() {
 	return (
 		<div id="hero" data-section className="relative h-dvh w-screen">
 			<Container fluid bg={theme.colors.backgroundPrimary[0]}>
-				<div className="absolute left-0 top-0 h-[75vh] w-screen sm:h-dvh">
+				<div className="absolute left-0 top-0 z-0 h-[75vh] w-screen sm:h-dvh">
 					<TopWave colors={topWaveGradient} />
 				</div>
 				<Center className="h-dvh">
@@ -76,7 +76,7 @@ export function Hero() {
 						<CallToAction />
 					</Stack>
 				</Center>
-				<div className="absolute bottom-0 left-0 h-[75vh] w-screen sm:h-lvh">
+				<div className="absolute bottom-0 left-0 z-0 h-[75vh] w-screen sm:h-lvh">
 					<BottomWave colors={bottomWaveGradient} />
 				</div>
 			</Container>

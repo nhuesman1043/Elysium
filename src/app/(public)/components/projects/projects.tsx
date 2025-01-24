@@ -29,7 +29,7 @@ import { Container } from "@mantine/core"
 export function Projects() {
 	// Render
 	return (
-		<div id="projects" data-section className="relative h-[200vh]">
+		<div id="projects" data-section className="h-screen">
 			<Container fluid>projects</Container>
 		</div>
 	)

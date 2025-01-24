@@ -6,6 +6,7 @@ Creation Date: 01/14/2025
 Modification History:
 #1 (01/14/2025) - Initial creation - Noah Huesman
 #2 (01/22/2025) - Added components - Noah Huesman
+#3 (01/24/2025) - Added particles background - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -15,6 +16,7 @@ Modification History:
 // Components
 import {
 	Hero,
+	ParticlesBackground,
 	Header,
 	About,
 	Experience,
@@ -41,13 +43,15 @@ export default function PublicPage() {
 			gap={0}
 		>
 			<Hero />
-			<Stack>
-				<Header />
-				<About />
-				<Experience />
-				<Projects />
-				<Contact />
-			</Stack>
+			<ParticlesBackground>
+				<Stack>
+					<Header />
+					<About />
+					<Experience />
+					<Projects />
+					<Contact />
+				</Stack>
+			</ParticlesBackground>
 		</Stack>
 	)
 }
