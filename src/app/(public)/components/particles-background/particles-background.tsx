@@ -24,7 +24,6 @@ Modification History:
 import { useState, useEffect } from "react"
 
 // Particles
-import type { Container } from "@tsparticles/engine"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadSlim } from "@tsparticles/slim"
 
@@ -54,20 +53,14 @@ export function ParticlesBackground({
 		})
 	}, [])
 
-	// Particles loaded flag
-	const particlesLoaded = async (container?: Container) => {
-		if (container) console.log(container)
-	}
-
 	// Render
 	return (
 		<div className="relative size-full">
 			{init && (
 				<Particles
 					id="tsparticles"
-					particlesLoaded={particlesLoaded}
 					options={{
-						fpsLimit: 120,
+						fpsLimit: 30,
 						particles: {
 							color: {
 								value: theme.colors.accentPrimary[0],
@@ -79,20 +72,14 @@ export function ParticlesBackground({
 									default: "out",
 								},
 								random: false,
-								speed: 1,
-								straight: false,
+								speed: 0.5,
+								straight: true,
 							},
 							number: {
-								value: 150,
+								value: 50,
 							},
 							opacity: {
-								value: { min: 0.25, max: 0.5 },
-								animation: {
-									enable: true,
-									speed: 0.5,
-									startValue: "random",
-									sync: false,
-								},
+								value: 0.4,
 							},
 							shape: {
 								type: "circle",
@@ -100,8 +87,18 @@ export function ParticlesBackground({
 							size: {
 								value: { min: 1, max: 5 },
 							},
+							interactivity: {
+								events: {
+									onHover: {
+										enable: false,
+									},
+									onClick: {
+										enable: false,
+									},
+								},
+							},
 						},
-						detectRetina: true,
+						detectRetina: false,
 						fullScreen: false,
 					}}
 					className="absolute left-0 top-0 z-0 size-full"
