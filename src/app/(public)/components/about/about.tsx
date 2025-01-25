@@ -20,7 +20,7 @@ Modification History:
 import { Container } from "@mantine/core"
 
 // Theme
-//import { theme } from "@/app/theme"
+// import { theme } from "@/app/theme"
 
 // ========================================
 // ABOUT
@@ -29,8 +29,14 @@ import { Container } from "@mantine/core"
 export function About() {
 	// Render
 	return (
-		<div id="about" data-section className="h-screen">
-			<Container fluid>about</Container>
+		<div
+			id="about"
+			data-section
+			className="h-screen border-2 border-red-600"
+		>
+			<Container size="xl" className="border-2 border-green-600">
+				about
+			</Container>
 		</div>
 	)
 }

@@ -29,8 +29,14 @@ import { Container } from "@mantine/core"
 export function Experience() {
 	// Render
 	return (
-		<div id="experience" data-section className="h-screen">
-			<Container fluid>experience</Container>
+		<div
+			id="experience"
+			data-section
+			className="h-screen border-2 border-blue-600"
+		>
+			<Container fluid className="border-2 border-purple-600">
+				experience
+			</Container>
 		</div>
 	)
 }
