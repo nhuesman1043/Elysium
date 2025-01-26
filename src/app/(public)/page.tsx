@@ -22,6 +22,7 @@ import {
 	Experience,
 	Projects,
 	Contact,
+	Footer,
 } from "./components"
 
 // Mantine
@@ -50,6 +51,7 @@ export default function PublicPage() {
 					<Experience />
 					<Projects />
 					<Contact />
+					<Footer />
 				</Stack>
 			</ParticlesBackground>
 		</Stack>
