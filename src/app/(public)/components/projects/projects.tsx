@@ -17,10 +17,10 @@ Modification History:
 // Components
 
 // Mantine
-import { Container } from "@mantine/core"
+import { Container, Center, Stack, Title } from "@mantine/core"
 
 // Theme
-//import { theme } from "@/app/theme"
+// import { theme } from "@/app/theme"
 
 // ========================================
 // PROJECTS
@@ -35,7 +35,11 @@ export function Projects() {
 			className="h-screen border-2 border-orange-600"
 		>
 			<Container fluid className="border-2 border-cyan-600">
-				projects
+				<Center>
+					<Stack justify="center" align="center">
+						<Title>Projects</Title>
+					</Stack>
+				</Center>
 			</Container>
 		</div>
 	)

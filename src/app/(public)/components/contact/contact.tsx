@@ -21,8 +21,6 @@ Modification History:
 // CSS
 // import classes from "./contact.module.css"
 
-// Components
-
 // Mantine
 import {
 	Center,
@@ -41,9 +39,6 @@ import { zodResolver } from "mantine-form-zod-resolver"
 
 // Mantine notifications
 import { notifications } from "@mantine/notifications"
-
-// Theme
-// import { theme } from "@/app/theme"
 
 // Zod
 import { z } from "zod"

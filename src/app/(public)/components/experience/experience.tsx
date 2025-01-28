@@ -17,10 +17,10 @@ Modification History:
 // Components
 
 // Mantine
-import { Container } from "@mantine/core"
+import { Container, Center, Stack, Title } from "@mantine/core"
 
 // Theme
-//import { theme } from "@/app/theme"
+// import { theme } from "@/app/theme"
 
 // ========================================
 // EXPERIENCE
@@ -35,7 +35,11 @@ export function Experience() {
 			className="h-screen border-2 border-blue-600"
 		>
 			<Container fluid className="border-2 border-purple-600">
-				experience
+				<Center>
+					<Stack justify="center" align="center">
+						<Title>Experience</Title>
+					</Stack>
+				</Center>
 			</Container>
 		</div>
 	)

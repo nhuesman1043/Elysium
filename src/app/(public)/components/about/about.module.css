@@ -1,0 +1,7 @@
+.text {
+	text-indent: 2em;
+}
+
+.image {
+	border: 1px solid var(--mantine-color-accentPrimary-0);
+}
