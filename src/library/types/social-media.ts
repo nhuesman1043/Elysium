@@ -1,20 +1,25 @@
 /* ================================================================
-Description: Index file for shared components
+Description: Type for social media
 Author: Noah Huesman
 
-Creation Date: 01/13/2025
+Creation Date: 01/29/2025
 Modification History:
-#1 (01/13/2025) - Initial creation - Noah Huesman
+#1 (01/29/2025) - Initial creation - Noah Huesman
 ================================================================ */
 
 // ========================================
-// TRANSITION LINK
+// IMPORTS
 // ========================================
 
-export * from "./transition-link"
+// React
+import { JSX } from "react"
 
 // ========================================
-// ICONS
+// SOCIAL MEDIA
 // ========================================
 
-export * from "./icons"
+export type SocialMedia = {
+	title: string
+	link: string
+	icon: JSX.Element
+}

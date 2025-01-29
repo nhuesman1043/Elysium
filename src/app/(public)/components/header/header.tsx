@@ -12,7 +12,7 @@ Modification History:
 // ========================================
 
 // CSS
-// import classes from "./header.module.css"
+import classes from "./header.module.css"
 
 // Components
 import { Link } from "./link"
@@ -39,7 +39,12 @@ export function Header() {
 	// Render
 	return (
 		<div id="header" className="sticky top-0 z-50">
-			<Container fluid bg={theme.colors.backgroundPrimary[0]} h={70}>
+			<Container
+				fluid
+				bg={theme.colors.backgroundPrimary[0]}
+				h={70}
+				className={classes.header}
+			>
 				{/* Mobile */}
 				<Group justify="center" px="sm" h="100%" hiddenFrom="sm">
 					{links.map((link, index) => (

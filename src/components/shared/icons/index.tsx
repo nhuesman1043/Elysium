@@ -1,20 +1,20 @@
 /* ================================================================
-Description: Index file for shared components
+Description: Index file for icons
 Author: Noah Huesman
 
-Creation Date: 01/13/2025
+Creation Date: 01/29/2025
 Modification History:
-#1 (01/13/2025) - Initial creation - Noah Huesman
+#1 (01/29/2025) - Initial creation - Noah Huesman
 ================================================================ */
 
 // ========================================
-// TRANSITION LINK
+// NEXTJS
 // ========================================
 
-export * from "./transition-link"
+export * from "./nextjs"
 
 // ========================================
-// ICONS
+// MONGODB
 // ========================================
 
-export * from "./icons"
+export * from "./mongodb"
