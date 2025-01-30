@@ -15,9 +15,6 @@ Modification History:
 // CSS
 // import classes from "./footer.module.css"
 
-// Shared components
-import { TransitionLink } from "@/components/shared"
-
 // Mantine
 import {
 	Container,
@@ -25,6 +22,7 @@ import {
 	HoverCard,
 	HoverCardTarget,
 	HoverCardDropdown,
+	Text,
 } from "@mantine/core"
 
 // Theme
@@ -36,6 +34,9 @@ import { IconBrandLinkedin, IconBrandGithub } from "@tabler/icons-react"
 // Types library
 import { SocialMedia } from "@/library/types"
 
+// Next
+import Link from "next/link"
+
 // ========================================
 // FOOTER
 // ========================================
@@ -44,12 +45,12 @@ export function Footer() {
 	// Define social media and their attributes
 	const socialMedia: Record<string, SocialMedia> = {
 		linkedin: {
-			title: "LinkedIn",
+			title: "My LinkedIn",
 			link: "https://www.linkedin.com/in/noah-huesman-6272121bb/",
 			icon: <IconBrandLinkedin stroke={1.1} size={35} />,
 		},
 		github: {
-			title: "GitHub",
+			title: "My GitHub",
 			link: "https://github.com/nhuesman1043?tab=repositories",
 			icon: <IconBrandGithub stroke={1.1} size={35} />,
 		},
@@ -59,23 +60,22 @@ export function Footer() {
 	return (
 		<div id="footer" className="z-50">
 			<Container fluid bg={theme.colors.backgroundPrimary[0]} h={70}>
-				<Group justify="center" h="100%" gap="lg">
+				<Group justify="center" h="100%" gap="xl">
 					{Object.values(socialMedia).map((medium: SocialMedia) => {
 						return (
 							<HoverCard
 								withArrow
 								arrowPosition="center"
 								arrowSize={10}
-								closeDelay={-100}
 								key={medium.title}
 							>
 								<HoverCardTarget>
-									<TransitionLink href={medium.link}>
+									<Link href={medium.link}>
 										{medium.icon}
-									</TransitionLink>
+									</Link>
 								</HoverCardTarget>
 								<HoverCardDropdown>
-									{medium.title}
+									<Text>{medium.title}</Text>
 								</HoverCardDropdown>
 							</HoverCard>
 						)
