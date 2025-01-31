@@ -19,8 +19,13 @@ import { JSX } from "react"
 // ========================================
 
 export type Experience = {
-	description: string
-	githubLink?: string
-	liveDemoLink?: string
-	tech: JSX.Element[]
+	company: string
+	companyDescription: string
+	companyLink: string
+	position: string
+	positionDescription: string
+	startDate: string
+	endDate: string
+	imagePath: string
+	techIcons: JSX.Element[]
 }

@@ -17,7 +17,7 @@ Modification History:
 // Components
 
 // Mantine
-import { Container, Center, Stack, Title } from "@mantine/core"
+import { Container, Space, Stack, Title } from "@mantine/core"
 
 // Theme
 // import { theme } from "@/app/theme"
@@ -29,17 +29,13 @@ import { Container, Center, Stack, Title } from "@mantine/core"
 export function Experience() {
 	// Render
 	return (
-		<div
-			id="experience"
-			data-section
-			className="h-screen border-2 border-blue-600"
-		>
-			<Container fluid className="border-2 border-purple-600">
-				<Center>
-					<Stack justify="center" align="center">
-						<Title>Experience</Title>
-					</Stack>
-				</Center>
+		<div id="experience" data-section>
+			<Container fluid>
+				<Stack justify="center" align="center">
+					<Title>Experince</Title>
+					<Space h="xl" />
+					<Space h="xl" />
+				</Stack>
 			</Container>
 		</div>
 	)

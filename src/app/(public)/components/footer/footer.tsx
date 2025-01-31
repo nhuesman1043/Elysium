@@ -15,6 +15,9 @@ Modification History:
 // CSS
 // import classes from "./footer.module.css"
 
+// Shared components
+import { TransitionLink } from "@/components/shared"
+
 // Mantine
 import {
 	Container,
@@ -33,9 +36,6 @@ import { IconBrandLinkedin, IconBrandGithub } from "@tabler/icons-react"
 
 // Types library
 import { SocialMedia } from "@/library/types"
-
-// Next
-import Link from "next/link"
 
 // ========================================
 // FOOTER
@@ -70,9 +70,9 @@ export function Footer() {
 								key={medium.title}
 							>
 								<HoverCardTarget>
-									<Link href={medium.link}>
+									<TransitionLink href={medium.link}>
 										{medium.icon}
-									</Link>
+									</TransitionLink>
 								</HoverCardTarget>
 								<HoverCardDropdown>
 									<Text>{medium.title}</Text>

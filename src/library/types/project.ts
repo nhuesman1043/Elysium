@@ -19,8 +19,10 @@ import { JSX } from "react"
 // ========================================
 
 export type Project = {
+	subtitle: string
 	description: string
+	imagePath: string
 	githubLink?: string
 	liveDemoLink?: string
-	tech: JSX.Element[]
+	techIcons: JSX.Element[]
 }

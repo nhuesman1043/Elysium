@@ -63,14 +63,11 @@ export function TransitionLink({
 		const body = document.querySelector("body")
 		body?.classList.add("page-transition")
 
-		// Sleep on transition start
-		await sleep(250)
-
 		// Navigate to page
 		await router.push(href)
 
 		// Sleep on transition end
-		await sleep(250)
+		await sleep(1000)
 
 		// Remove transition class
 		body?.classList.remove("page-transition")

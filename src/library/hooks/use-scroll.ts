@@ -92,7 +92,7 @@ export const useScroll = () => {
 			if (targetElement) {
 				lenisRef.current.scrollTo(targetElement, {
 					offset: -70, // Header offset
-					duration: 1,
+					duration: 0.5,
 					easing: (t) => t,
 				})
 			}

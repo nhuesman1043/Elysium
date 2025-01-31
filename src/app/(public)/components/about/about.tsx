@@ -20,6 +20,7 @@ import {
 	Grid,
 	GridCol,
 	Stack,
+	Space,
 	Title,
 	Text,
 	Image,
@@ -42,6 +43,7 @@ export function About() {
 			<Container size="xl">
 				<Stack justify="center" align="center">
 					<Title>About</Title>
+					<Space h="xl" />
 					<Grid gutter={{ base: "lg", md: 100 }}>
 						<GridCol span={{ base: 12, sm: 6, md: 7 }}>
 							<Text size="lg" className={classes.text}>
@@ -61,14 +63,15 @@ export function About() {
 						<GridCol span={{ base: 12, sm: 6, md: 5 }}>
 							<Image
 								component={NextImage}
-								src="/images/headshot.jpg"
+								src="/images/about/headshot.jpg"
 								alt="My headshot"
-								width={5000}
-								height={5000}
+								width={5213}
+								height={3822}
 								className={classes.image}
 							/>
 						</GridCol>
 					</Grid>
+					<Space h="xl" />
 				</Stack>
 			</Container>
 		</div>

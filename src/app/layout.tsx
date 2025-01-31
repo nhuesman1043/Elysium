@@ -43,7 +43,7 @@ import { Poppins } from "next/font/google"
 // ========================================
 
 export const metadata: Metadata = {
-	title: "Noah Huesman",
+	title: "Noah Huesman - Software Engineer",
 	description: "Noah Huesman's portfolio website",
 }
 

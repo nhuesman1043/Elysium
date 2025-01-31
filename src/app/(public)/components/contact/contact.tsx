@@ -32,6 +32,7 @@ import {
 	Paper,
 	TextInput,
 	Textarea,
+	Space,
 	Button,
 } from "@mantine/core"
 import { useForm } from "@mantine/form"
@@ -141,11 +142,12 @@ export function Contact() {
 				<Center>
 					<Stack justify="center" align="center">
 						<Title>Contact</Title>
+						<Space h="xl" />
 						<Text ta="center">
 							Interested in working together? Send me an email
 							here.
 						</Text>
-						<Paper radius="md" shadow="md" w="100%" p="xl" mb="xl">
+						<Paper radius="md" shadow="md" w="100%" p="xl">
 							<form
 								onSubmit={form.onSubmit(() => handleSubmit())}
 							>
@@ -205,6 +207,7 @@ export function Contact() {
 								</Stack>
 							</form>
 						</Paper>
+						<Space h="xl" />
 					</Stack>
 				</Center>
 			</Container>
