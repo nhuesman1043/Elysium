@@ -38,7 +38,7 @@ export const useScroll = () => {
 			autoRaf: true,
 			smoothWheel: true,
 			syncTouch: true,
-			touchMultiplier: 2,
+			touchMultiplier: 0.9,
 			wheelMultiplier: 1,
 			lerp: 0.1,
 			anchors: true,
