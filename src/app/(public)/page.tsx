@@ -19,7 +19,7 @@ import {
 	ParticlesBackground,
 	Header,
 	About,
-	Experience,
+	Experiences,
 	Projects,
 	Contact,
 	Footer,
@@ -45,10 +45,10 @@ export default function PublicPage() {
 		>
 			<Hero />
 			<ParticlesBackground>
-				<Stack>
+				<Stack gap="xl">
 					<Header />
 					<About />
-					<Experience />
+					<Experiences />
 					<Projects />
 					<Contact />
 					<Footer />

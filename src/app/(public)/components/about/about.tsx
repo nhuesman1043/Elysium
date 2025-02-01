@@ -42,8 +42,8 @@ export function About() {
 		<div id="about" data-section>
 			<Container size="xl">
 				<Stack justify="center" align="center">
-					<Title>About</Title>
-					<Space h="xl" />
+					<Title className={classes.title}>About</Title>
+					<Space visibleFrom="md" h="xl" />
 					<Grid gutter={{ base: "lg", md: 100 }}>
 						<GridCol span={{ base: 12, sm: 6, md: 7 }}>
 							<Text size="lg" className={classes.text}>

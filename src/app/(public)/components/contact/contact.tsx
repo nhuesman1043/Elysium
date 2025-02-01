@@ -19,7 +19,7 @@ Modification History:
 // ========================================
 
 // CSS
-// import classes from "./contact.module.css"
+import classes from "./contact.module.css"
 
 // Mantine
 import {
@@ -141,8 +141,8 @@ export function Contact() {
 			<Container size="xl">
 				<Center>
 					<Stack justify="center" align="center">
-						<Title>Contact</Title>
-						<Space h="xl" />
+						<Title className={classes.title}>Contact</Title>
+						<Space visibleFrom="md" h="xl" />
 						<Text ta="center">
 							Interested in working together? Send me an email
 							here.

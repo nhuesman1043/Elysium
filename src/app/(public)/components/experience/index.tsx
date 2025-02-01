@@ -11,4 +11,4 @@ Modification History:
 // EXPERIENCE
 // ========================================
 
-export * from "./experience"
+export * from "./experiences"
