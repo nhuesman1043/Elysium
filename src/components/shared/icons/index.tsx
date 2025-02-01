@@ -1,5 +1,5 @@
 /* ================================================================
-Description: Index file for icons
+Description: Icons index
 Author: Noah Huesman
 
 Creation Date: 01/29/2025
@@ -8,13 +8,7 @@ Modification History:
 ================================================================ */
 
 // ========================================
-// NEXTJS
+// ICONS
 // ========================================
 
-export * from "./nextjs"
-
-// ========================================
-// MONGODB
-// ========================================
-
-export * from "./mongodb"
+export * from "./icons"

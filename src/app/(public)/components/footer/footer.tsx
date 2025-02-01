@@ -25,6 +25,7 @@ import {
 	HoverCard,
 	HoverCardTarget,
 	HoverCardDropdown,
+	Text,
 } from "@mantine/core"
 
 // Theme
@@ -44,12 +45,12 @@ export function Footer() {
 	// Define social media and their attributes
 	const socialMedia: Record<string, SocialMedia> = {
 		linkedin: {
-			title: "LinkedIn",
+			title: "My LinkedIn",
 			link: "https://www.linkedin.com/in/noah-huesman-6272121bb/",
 			icon: <IconBrandLinkedin stroke={1.1} size={35} />,
 		},
 		github: {
-			title: "GitHub",
+			title: "My GitHub",
 			link: "https://github.com/nhuesman1043?tab=repositories",
 			icon: <IconBrandGithub stroke={1.1} size={35} />,
 		},
@@ -59,14 +60,13 @@ export function Footer() {
 	return (
 		<div id="footer" className="z-50">
 			<Container fluid bg={theme.colors.backgroundPrimary[0]} h={70}>
-				<Group justify="center" h="100%" gap="lg">
+				<Group justify="center" h="100%" gap="xl">
 					{Object.values(socialMedia).map((medium: SocialMedia) => {
 						return (
 							<HoverCard
 								withArrow
 								arrowPosition="center"
 								arrowSize={10}
-								closeDelay={-100}
 								key={medium.title}
 							>
 								<HoverCardTarget>
@@ -75,7 +75,7 @@ export function Footer() {
 									</TransitionLink>
 								</HoverCardTarget>
 								<HoverCardDropdown>
-									{medium.title}
+									<Text>{medium.title}</Text>
 								</HoverCardDropdown>
 							</HoverCard>
 						)
