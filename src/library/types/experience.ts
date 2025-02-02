@@ -20,12 +20,10 @@ import { JSX } from "react"
 
 export type Experience = {
 	company: string
-	companyDescription: string
 	companyLink: string
 	position: string
 	positionDescription: string
 	startDate: string
 	endDate: string
-	imagePath: string
 	techIcons: JSX.Element[]
 }
