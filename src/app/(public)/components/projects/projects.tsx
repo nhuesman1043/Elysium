@@ -47,7 +47,7 @@ import {
 } from "@mantine/core"
 
 // Theme
-// import { theme } from "@/app/theme"
+import { theme } from "@/app/theme"
 
 // Types library
 import { Project } from "@/library/types"
@@ -143,6 +143,7 @@ export function Projects() {
 								ta={{ base: "center", md: "left" }}
 								fw={700}
 								size="30px"
+								c={theme.colors.accentPrimary[0]}
 							>
 								{project}
 							</Text>

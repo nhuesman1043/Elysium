@@ -38,6 +38,10 @@ import { theme } from "./theme"
 import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
 
+// Vercel
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 // ========================================
 // METADATA
 // ========================================
@@ -69,6 +73,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 				<ColorSchemeScript forceColorScheme="dark" />
 			</head>
 			<body>
+				<Analytics />
+				<SpeedInsights />
 				<MantineProvider forceColorScheme="dark" theme={theme}>
 					<Notifications autoClose={5000} />
 					{children}
