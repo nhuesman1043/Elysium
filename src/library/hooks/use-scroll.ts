@@ -53,7 +53,7 @@ export const useScroll = () => {
 			sections.forEach((section) => {
 				if (
 					section.getBoundingClientRect().top <
-					window.innerHeight * 0.3
+					window.innerHeight * 0.5
 				)
 					setActiveSection(section.id)
 			})

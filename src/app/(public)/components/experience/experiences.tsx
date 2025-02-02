@@ -15,7 +15,17 @@ Modification History:
 // CSS
 import classes from "./experiences.module.css"
 
-// Components
+// Shared components
+import {
+	Python,
+	Mssql,
+	React,
+	Ignition,
+	CSharp,
+	Jenkins,
+	Mongodb,
+	GoogleCloud,
+} from "@/components/shared"
 
 // Mantine
 import { Container, Space, Stack, Title, Grid, GridCol } from "@mantine/core"
@@ -34,26 +44,39 @@ export function Experiences() {
 	// Define experiences
 	const experiences: Record<string, Experience> = {
 		marvin: {
-			company: "",
+			company: "Marvin Windows and Doors",
 			companyDescription: "",
-			companyLink: "",
-			position: "",
-			positionDescription: "",
-			startDate: "",
-			endDate: "",
+			companyLink: "https://www.marvin.com/",
+			position: "Systems Programming Intern",
+			positionDescription:
+				"Automated manufacturing processes using Ignition. Developed software tools for ",
+			startDate: "May 2023",
+			endDate: "January 2025",
 			imagePath: "",
-			techIcons: [],
+			techIcons: [
+				<Ignition key="ignition" />,
+				<Python key="python" />,
+				<Mssql key="mssql" />,
+				<React key="react" />,
+				<CSharp key="csharp" />,
+			],
 		},
 		signum: {
-			company: "",
+			company: "Signum",
 			companyDescription: "",
-			companyLink: "",
-			position: "",
+			companyLink: "https://signumiot.com/",
+			position: "Software Engineer Intern",
 			positionDescription: "",
-			startDate: "",
-			endDate: "",
+			startDate: "January 2025",
+			endDate: "N/A",
 			imagePath: "",
-			techIcons: [],
+			techIcons: [
+				<React key="react" />,
+				<Jenkins key="jenkins" />,
+				<Mongodb key="mongodb" />,
+				<CSharp key="csharp" />,
+				<GoogleCloud key="googleCloud" />,
+			],
 		},
 	}
 
