@@ -28,76 +28,57 @@ import { useState, useEffect, useRef } from "react"
 // ========================================
 
 export const useScroll = () => {
-	// Ref to store Lenis instance
+	// Initialize Lenis and active section
 	const lenisRef = useRef<Lenis | null>(null)
-
-	// State to track the active section
 	const [activeSection, setActiveSection] = useState<string>("")
 
-	// Effect to initialize Lenis
 	useEffect(() => {
 		// Initialize Lenis
 		const lenis = new Lenis({
-			lerp: 0.1,
+			autoRaf: true,
 			smoothWheel: true,
 			syncTouch: true,
+			touchMultiplier: 0.9,
+			wheelMultiplier: 1,
+			lerp: 0.1,
+			anchors: true,
 		})
 
-		// Store the instance in the ref
+		// Save Lenis instance to ref
 		lenisRef.current = lenis
 
-		// Animation frame loop for Lenis
-		const raf = (time: number) => {
-			lenis.raf(time)
-			requestAnimationFrame(raf)
-		}
-		requestAnimationFrame(raf)
+		// Listen to scroll events
+		lenis.on("scroll", () => {
+			const sections = document.querySelectorAll("[data-section]")
+			sections.forEach((section) => {
+				if (
+					section.getBoundingClientRect().top <
+					window.innerHeight * 0.3
+				)
+					setActiveSection(section.id)
+			})
+		})
 
+		// Destroy Lenis on unmount
 		return () => {
-			// Cleanup when component is unmounted
 			lenis.destroy()
 		}
 	}, [])
 
-	// Effect to track active section
-	useEffect(() => {
-		// Track active section using IntersectionObserver
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) setActiveSection(entry.target.id)
-				})
-			},
-			{ threshold: 0.1 }
-		)
-
-		// Observe all sections with an ID
-		const sections = document.querySelectorAll("[data-section]")
-		sections.forEach((section) => observer.observe(section))
-
-		return () => {
-			// Cleanup observer
-			observer.disconnect()
-		}
-	}, [])
-
-	// Scroll to an element by id
+	// Smooth scrolling to an element by id
 	const scrollToId = (id: string) => {
-		// Check if Lenis instance is initialized
 		if (lenisRef.current) {
-			// Get the target element by id
 			const targetElement = document.getElementById(id)
-
-			// Scroll to the target element if it exists
 			if (targetElement) {
 				lenisRef.current.scrollTo(targetElement, {
-					offset: -70, // Header offset
+					offset: -70,
 					duration: 0.5,
-					easing: (t) => t,
+					easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 				})
 			}
 		}
 	}
 
+	// Return active section and scroll function
 	return { activeSection, scrollToId }
 }
