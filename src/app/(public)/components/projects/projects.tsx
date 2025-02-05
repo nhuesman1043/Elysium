@@ -232,7 +232,7 @@ export function Projects() {
 								)}
 							</Group>
 						</Stack>
-						<Divider mt="xl" hiddenFrom="xl" />
+						<Divider mt="xl" mb="md" hiddenFrom="xl" />
 					</GridCol>
 					<GridCol span={{ base: 0, xl: 1 }}></GridCol>
 				</>

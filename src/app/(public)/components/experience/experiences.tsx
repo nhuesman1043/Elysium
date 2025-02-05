@@ -138,7 +138,7 @@ export function Experiences() {
 						</Stack>
 					</GridCol>
 					<GridCol span={{ base: 12, xl: 5 }}>
-						<Grid mb="lg" justify="center">
+						<Grid justify="center">
 							{Array.from({ length: 14 }).map((_, index) => (
 								<GridCol
 									key={index}
@@ -149,7 +149,7 @@ export function Experiences() {
 								</GridCol>
 							))}
 						</Grid>
-						<Divider mt="xl" hiddenFrom="xl" />
+						<Divider mt="xs" mb="md" hiddenFrom="xl" />
 					</GridCol>
 					<GridCol span={{ base: 0, xl: 1 }}></GridCol>
 				</>
