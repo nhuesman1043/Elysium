@@ -43,6 +43,7 @@ import {
 	GridCol,
 	Group,
 	Text,
+	Divider,
 	Image,
 } from "@mantine/core"
 
@@ -68,7 +69,7 @@ export function Projects() {
 		Atlas: {
 			subtitle: "Home Ubuntu Server",
 			description:
-				"An old dell PC turned Ubuntu server that I use to host my family Minecraft server and Keycloak via Docker.",
+				"A repurposed Dell PC running Ubuntu, hosting a family Minecraft server and Keycloak via Docker.",
 			imagePath: "/images/projects/atlas.png",
 			techIcons: [
 				<Ubuntu key="ubuntu" />,
@@ -79,7 +80,7 @@ export function Projects() {
 		Spartan: {
 			subtitle: "Web Application Template",
 			description:
-				"A web application template configured for building full-stack applications.",
+				"A fully configured web application template designed for building scalable full-stack applications.",
 			imagePath: "/images/projects/spartan.png",
 			techIcons: [
 				<Nextjs key="nextjs" />,
@@ -87,13 +88,16 @@ export function Projects() {
 				<Prisma key="prisma" />,
 				<Playwright key="playwright" />,
 				<Authjs key="authjs" />,
+				<GoogleCloud key="googleCloud" />,
+				<Docker key="docker" />,
+				<GithubActions key="githubActions" />,
 			],
-			githubLink: "https://github.com/ANOVIX-Software/Spartan",
+			liveDemoLink: "https://spartan.anovix-software.com",
 		},
 		Achlys: {
 			subtitle: "Cemetery Management Solution",
 			description:
-				"Cemetery management software for a church in my hometown of Barnesville, Minnesota.",
+				"Cemetery management software built for a church in Barnesville, Minnesota, streamlining record-keeping and administration.",
 			imagePath: "/images/projects/achlys.png",
 			techIcons: [
 				<Nextjs key="nextjs" />,
@@ -109,7 +113,8 @@ export function Projects() {
 		},
 		Elysium: {
 			subtitle: "Portfolio Website",
-			description: "This portfolio that you are looking at right now.",
+			description:
+				"The portfolio you're viewing now, designed to showcase my experiences and projects.",
 			imagePath: "/images/projects/elysium.png",
 			techIcons: [
 				<Nextjs key="nextjs" />,
@@ -119,9 +124,9 @@ export function Projects() {
 			liveDemoLink: "https://noah-huesman.dev",
 		},
 		Taurus: {
-			subtitle: "NDSU Bison Motorsports",
+			subtitle: "NDSU Bison Motorsports Website",
 			description:
-				"NDSU Bison Motorsport's website that I am leading the development of.",
+				"The official website for NDSU Bison Motorsports, which I lead development of.",
 			imagePath: "/images/projects/taurus.png",
 			techIcons: [
 				<Nextjs key="nextjs" />,
@@ -136,11 +141,11 @@ export function Projects() {
 		return (
 			<React.Fragment key={project}>
 				<>
-					<GridCol span={{ base: 0, md: 1 }}></GridCol>
-					<GridCol span={{ base: 12, md: 5 }}>
+					<GridCol span={{ base: 0, xl: 1 }}></GridCol>
+					<GridCol span={{ base: 12, xl: 5 }}>
 						<Stack gap="md">
 							<Text
-								ta={{ base: "center", md: "left" }}
+								ta={{ base: "center", xl: "left" }}
 								fw={700}
 								size="30px"
 								c={theme.colors.accentPrimary[0]}
@@ -148,7 +153,7 @@ export function Projects() {
 								{project}
 							</Text>
 							<Text
-								ta={{ base: "center", md: "left" }}
+								ta={{ base: "center", xl: "left" }}
 								fw={500}
 								size="25px"
 								c="dimmed"
@@ -156,19 +161,25 @@ export function Projects() {
 								{projects[project].subtitle}
 							</Text>
 							<Text
-								ta={{ base: "center", md: "left" }}
-								size="20px"
+								ta={{ base: "center", xl: "left" }}
+								className={classes.text}
 							>
 								{projects[project].description}
 							</Text>
-							<Center mt={{ base: "md", md: "lg" }}>
-								<Grid>
-									{Array.from({ length: 12 }).map(
+							<Center mt={{ base: "md", xl: "lg" }}>
+								<Grid justify="center">
+									{Array.from({ length: 14 }).map(
 										(_, index) => (
 											<GridCol
-												span={{ base: 4, md: 3 }}
 												key={index}
-												w={{ base: 25, md: 50 }}
+												miw={{
+													base: 100,
+													xl: 125,
+												}}
+												maw={{
+													base: 100,
+													xl: 125,
+												}}
 											>
 												{
 													projects[project].techIcons[
@@ -182,9 +193,9 @@ export function Projects() {
 							</Center>
 						</Stack>
 					</GridCol>
-					<GridCol span={{ base: 12, md: 5 }}>
+					<GridCol span={{ base: 12, xl: 5 }}>
 						<Stack gap="xs" align="center">
-							<Container mb="lg" fluid>
+							<Container fluid>
 								<Image
 									component={NextImage}
 									src={projects[project].imagePath}
@@ -221,8 +232,9 @@ export function Projects() {
 								)}
 							</Group>
 						</Stack>
+						<Divider mt="xl" hiddenFrom="xl" />
 					</GridCol>
-					<GridCol span={{ base: 0, md: 1 }}></GridCol>
+					<GridCol span={{ base: 0, xl: 1 }}></GridCol>
 				</>
 			</React.Fragment>
 		)
@@ -234,9 +246,9 @@ export function Projects() {
 			<Container fluid>
 				<Stack justify="center" align="center">
 					<Title className={classes.title}>Projects</Title>
-					<Space visibleFrom="md" h="xl" />
+					<Space visibleFrom="md" h={{ base: "xs", xl: "xl" }} />
 					<Container fluid>
-						<Grid gutter={{ base: 10, md: 100 }}>
+						<Grid gutter={{ base: 10, md: 25, xl: 100 }}>
 							{projectColumns}
 						</Grid>
 					</Container>

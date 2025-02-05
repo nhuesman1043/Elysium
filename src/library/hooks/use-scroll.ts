@@ -53,7 +53,7 @@ export const useScroll = () => {
 			sections.forEach((section) => {
 				if (
 					section.getBoundingClientRect().top <
-					window.innerHeight * 0.5
+					window.innerHeight * 0.4
 				)
 					setActiveSection(section.id)
 			})
@@ -71,9 +71,8 @@ export const useScroll = () => {
 			const targetElement = document.getElementById(id)
 			if (targetElement) {
 				lenisRef.current.scrollTo(targetElement, {
-					offset: -70,
-					duration: 0.5,
-					easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+					offset: -80,
+					duration: 2,
 				})
 			}
 		}
