@@ -43,24 +43,24 @@ export function About() {
 			<Container size="xl">
 				<Stack justify="center" align="center">
 					<Title className={classes.title}>About</Title>
-					<Space visibleFrom="md" h="xl" />
+					<Space visibleFrom="md" h={{ base: "xs", xl: "xl" }} />
 					<Grid gutter={{ base: "lg", md: 100 }}>
-						<GridCol span={{ base: 12, sm: 6, md: 7 }}>
-							<Text size="lg" className={classes.text}>
+						<GridCol span={{ base: 12, sm: 6, lg: 7 }}>
+							<Text className={classes.text}>
 								Driven by a passion for problem-solving and
 								efficiency, I&apos;m a software engineer with
-								experience in automation, cloud development, and
-								system optimization. I thrive on building
-								high-impact solutions, whether it&apos;s
-								optimizing server performance, streamlining
-								CI/CD pipelines, or developing scalable
-								applications. My work spans from hands-on
-								development at Signum and Marvin to leading
-								technical efforts in student organizations and
-								my capstone project for Galois.
+								expertise in automation, cloud development, and
+								system optimization. I specialize in building
+								high-impact solutions, from optimizing server
+								performance and streamlining CI/CD pipelines to
+								developing scalable applications. My experience
+								spans hands-on development at Signum and Marvin,
+								leading technical initiatives in student
+								organizations, and driving innovation in my
+								capstone project for Galois.
 							</Text>
 						</GridCol>
-						<GridCol span={{ base: 12, sm: 6, md: 5 }}>
+						<GridCol span={{ base: 12, sm: 6, lg: 5 }}>
 							<Image
 								component={NextImage}
 								src="/images/about/headshot.jpg"

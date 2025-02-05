@@ -20,6 +20,9 @@ Modification History:
 // CSS
 // import classes from "./particles-background.module.css"
 
+// Mantine
+import { useMediaQuery } from "@mantine/hooks"
+
 // React
 import { useState, useEffect } from "react"
 
@@ -39,6 +42,9 @@ export function ParticlesBackground({
 }: {
 	children: React.ReactNode
 }) {
+	// Determine if mobile
+	const isMobile = useMediaQuery("(max-width: 62em)")
+
 	// Initialization state
 	const [init, setInit] = useState(false)
 
@@ -60,7 +66,7 @@ export function ParticlesBackground({
 				<Particles
 					id="tsparticles"
 					options={{
-						fpsLimit: 30,
+						fpsLimit: isMobile ? 30 : 60,
 						particles: {
 							color: {
 								value: theme.colors.accentPrimary[0],
@@ -76,7 +82,7 @@ export function ParticlesBackground({
 								straight: true,
 							},
 							number: {
-								value: 50,
+								value: isMobile ? 50 : 100,
 							},
 							opacity: {
 								value: 0.4,

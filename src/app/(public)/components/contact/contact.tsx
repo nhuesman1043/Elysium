@@ -142,10 +142,9 @@ export function Contact() {
 				<Center>
 					<Stack justify="center" align="center">
 						<Title className={classes.title}>Contact</Title>
-						<Space visibleFrom="md" h="xl" />
+						<Space visibleFrom="md" h={{ base: "xs", xl: "xl" }} />
 						<Text ta="center">
-							Interested in working together? Send me an email
-							here.
+							Let&apos;s connect! Send me a message anytime.
 						</Text>
 						<Paper radius="md" shadow="md" w="100%" p="xl">
 							<form

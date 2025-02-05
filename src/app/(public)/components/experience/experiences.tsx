@@ -38,6 +38,7 @@ import {
 	Text,
 	Grid,
 	GridCol,
+	Divider,
 } from "@mantine/core"
 
 // Theme
@@ -61,7 +62,7 @@ export function Experiences() {
 			companyLink: "https://www.marvin.com/",
 			position: "Systems Programming Intern",
 			positionDescription:
-				"Automated manufacturing processes using Ignition. Developed software tools for ",
+				"Automated manufacturing processes using Ignition. Developed software tools to optimize production efficiency among team members.",
 			startDate: "May 2023",
 			endDate: "January 2025",
 			techIcons: [
@@ -76,9 +77,10 @@ export function Experiences() {
 			company: "Signum",
 			companyLink: "https://signumiot.com/",
 			position: "Software Engineer Intern",
-			positionDescription: "",
+			positionDescription:
+				"Enhancing CI/CD workflows with Jenkins. Developing scalable solutions for data management and cloud infrastructure.",
 			startDate: "January 2025",
-			endDate: "N/A",
+			endDate: "Present",
 			techIcons: [
 				<ReactIcon key="react" />,
 				<Jenkins key="jenkins" />,
@@ -96,14 +98,14 @@ export function Experiences() {
 		return (
 			<React.Fragment key={experience}>
 				<>
-					<GridCol span={{ base: 0, md: 1 }}></GridCol>
-					<GridCol span={{ base: 12, md: 5 }}>
+					<GridCol span={{ base: 0, xl: 1 }}></GridCol>
+					<GridCol span={{ base: 12, xl: 5 }}>
 						<Stack gap="md">
 							<TransitionLink
 								href={experiences[experience].companyLink}
 							>
 								<Text
-									ta={{ base: "center", md: "left" }}
+									ta={{ base: "center", xl: "left" }}
 									fw={700}
 									size="30px"
 									c={theme.colors.accentPrimary[0]}
@@ -112,7 +114,7 @@ export function Experiences() {
 								</Text>
 							</TransitionLink>
 							<Text
-								ta={{ base: "center", md: "left" }}
+								ta={{ base: "center", xl: "left" }}
 								fw={500}
 								size="25px"
 								c="dimmed"
@@ -120,34 +122,36 @@ export function Experiences() {
 								{experiences[experience].position}
 							</Text>
 							<Text
-								ta={{ base: "center", md: "left" }}
-								size="20px"
+								ta={{ base: "center", xl: "left" }}
+								c="dimmed"
+								className={classes.text}
 							>
 								{experiences[experience].startDate} -{" "}
 								{experiences[experience].endDate}
 							</Text>
 							<Text
-								ta={{ base: "center", md: "left" }}
-								size="20px"
+								ta={{ base: "center", xl: "left" }}
+								className={classes.text}
 							>
 								{experiences[experience].positionDescription}
 							</Text>
 						</Stack>
 					</GridCol>
-					<GridCol span={{ base: 12, md: 5 }}>
-						<Grid mb="lg" mt="lg">
-							{Array.from({ length: 12 }).map((_, index) => (
+					<GridCol span={{ base: 12, xl: 5 }}>
+						<Grid mb="lg" justify="center">
+							{Array.from({ length: 14 }).map((_, index) => (
 								<GridCol
-									span={{ base: 4, md: 2 }}
 									key={index}
-									w={{ base: 25, md: 50 }}
+									miw={{ base: 100, xl: 125 }}
+									maw={{ base: 100, xl: 125 }}
 								>
 									{experiences[experience].techIcons[index]}
 								</GridCol>
 							))}
 						</Grid>
+						<Divider mt="xl" hiddenFrom="xl" />
 					</GridCol>
-					<GridCol span={{ base: 0, md: 1 }}></GridCol>
+					<GridCol span={{ base: 0, xl: 1 }}></GridCol>
 				</>
 			</React.Fragment>
 		)
@@ -159,9 +163,9 @@ export function Experiences() {
 			<Container fluid>
 				<Stack justify="center" align="center">
 					<Title className={classes.title}>Experiences</Title>
-					<Space visibleFrom="md" h="xl" />
+					<Space visibleFrom="md" h={{ base: "xs", xl: "xl" }} />
 					<Container fluid>
-						<Grid gutter={{ base: 10, md: 100 }}>
+						<Grid gutter={{ base: 10, md: 25, xl: 100 }}>
 							{experienceColumns}
 						</Grid>
 					</Container>
