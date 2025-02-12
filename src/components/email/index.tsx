@@ -8,7 +8,7 @@ Modification History:
 ================================================================ */
 
 // ========================================
-// CONTACT EMAIL
+// CONTACT REQUEST
 // ========================================
 
-export * from "./contact-email"
+export * from "./contact-request"

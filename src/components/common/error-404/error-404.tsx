@@ -14,8 +14,8 @@ Modification History:
 // CSS
 import classes from "./error-404.module.css"
 
-// Shared components
-import { TransitionLink } from "@/components/shared"
+// Common components
+import { TransitionLink } from "@/components/common"
 
 // Mantine
 import { Button, Container, Group, Text, Title } from "@mantine/core"

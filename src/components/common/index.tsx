@@ -1,5 +1,5 @@
 /* ================================================================
-Description: Index file for shared components
+Description: Index file for common components
 Author: Noah Huesman
 
 Creation Date: 01/13/2025
@@ -18,3 +18,9 @@ export * from "./transition-link"
 // ========================================
 
 export * from "./icons"
+
+// ========================================
+// ERROR 404
+// ========================================
+
+export * from "./error-404"

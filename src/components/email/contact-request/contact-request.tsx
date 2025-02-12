@@ -18,7 +18,7 @@ import { Html, Body, Container, Text, Heading } from "@react-email/components"
 // CONTACT EMAIL
 // ========================================
 
-export default function ContactEmail({
+export default function ContactRequest({
 	firstName,
 	lastName,
 	email,

@@ -23,8 +23,8 @@ import {
 	Text,
 } from "@mantine/core"
 
-// Shared components
-import { TransitionLink } from "@/components/shared"
+// Common components
+import { TransitionLink } from "@/components/common"
 
 // ========================================
 // ICON WRAPPER

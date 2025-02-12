@@ -16,7 +16,7 @@ Modification History:
 // CSS
 import classes from "./projects.module.css"
 
-// Shared components
+// Common components
 import {
 	TransitionLink,
 	Nextjs,
@@ -30,7 +30,7 @@ import {
 	GithubActions,
 	GoogleCloud,
 	Authjs,
-} from "@/components/shared"
+} from "@/components/common"
 
 // Mantine
 import {
@@ -91,6 +91,7 @@ export function Projects() {
 				<GoogleCloud key="googleCloud" />,
 				<Docker key="docker" />,
 				<GithubActions key="githubActions" />,
+				<Vitest key="vitest" />,
 			],
 			liveDemoLink: "https://spartan.anovix-software.com",
 		},
@@ -131,6 +132,7 @@ export function Projects() {
 			techIcons: [
 				<Nextjs key="nextjs" />,
 				<Playwright key="playwright" />,
+				<Docker key="docker" />,
 			],
 		},
 	}

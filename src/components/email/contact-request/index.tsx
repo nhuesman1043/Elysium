@@ -1,5 +1,5 @@
 /* ================================================================
-Description: Contact email index
+Description: Contact request index
 Author: Noah Huesman
 
 Creation Date: 01/26/2025
@@ -8,7 +8,7 @@ Modification History:
 ================================================================ */
 
 // ========================================
-// CONTACT EMAIL
+// CONTACT REQUEST
 // ========================================
 
-export { default as ContactEmail } from "./contact-email"
+export { default as ContactRequest } from "./contact-request"

@@ -15,7 +15,7 @@ Modification History:
 import { Resend } from "resend"
 
 // Email components
-import { ContactEmail } from "@/components/emails"
+import { ContactRequest } from "@/components/email"
 
 // Utils library
 import { createLogger } from "@/library/utils"
@@ -46,7 +46,7 @@ export async function POST(req: Request) {
 			from: process.env.NO_REPLY_EMAIL as string,
 			to: [process.env.EMAIL_TO as string],
 			subject: body.subject,
-			react: ContactEmail({
+			react: ContactRequest({
 				firstName: body.firstName,
 				lastName: body.lastName,
 				email: body.email,

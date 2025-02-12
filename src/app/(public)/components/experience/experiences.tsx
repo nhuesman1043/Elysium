@@ -16,7 +16,7 @@ Modification History:
 // CSS
 import classes from "./experiences.module.css"
 
-// Shared components
+// Common components
 import {
 	TransitionLink,
 	Python,
@@ -27,7 +27,7 @@ import {
 	Jenkins,
 	Mongodb,
 	GoogleCloud,
-} from "@/components/shared"
+} from "@/components/common"
 
 // Mantine
 import {
