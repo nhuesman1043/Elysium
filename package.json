@@ -4,7 +4,6 @@
 	"private": true,
 	"scripts": {
 		"prepare": "husky",
-		"postinstall": "npm run format",
 		"format:check": "prettier --check .",
 		"format": "prettier --write .",
 		"lint": "next lint",

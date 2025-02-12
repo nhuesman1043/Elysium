@@ -15,8 +15,8 @@ Modification History:
 // CSS
 // import classes from "./footer.module.css"
 
-// Shared components
-import { TransitionLink } from "@/components/shared"
+// Common components
+import { TransitionLink } from "@/components/common"
 
 // Mantine
 import {
