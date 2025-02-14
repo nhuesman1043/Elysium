@@ -46,3 +46,6 @@ logs
 
 # playwright
 /playwright-results
+
+# vitest
+/vitest-results
