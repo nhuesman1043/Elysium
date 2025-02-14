@@ -32,19 +32,13 @@ const logLevels = {
 		error: 0,
 		warn: 1,
 		info: 2,
-		http: 3,
-		verbose: 4,
-		debug: 5,
-		silly: 6,
+		debug: 3,
 	},
 	colors: {
 		error: "red",
 		warn: "yellow",
 		info: "green",
-		http: "magenta",
-		verbose: "cyan",
 		debug: "blue",
-		silly: "grey",
 	},
 }
 
@@ -55,17 +49,13 @@ winston.addColors(logLevels.colors)
 // CREATE LOGGER
 // ========================================
 
-// Configure logging level
-const level = process.env.NODE_ENV === "production" ? "info" : "debug"
-
-// Create async function to initialize logger
 export const createLogger = async () => {
+	// Define transports array
 	const transports = []
 
 	// Console transport for all environments
 	transports.push(
 		new winston.transports.Console({
-			level,
 			format: winston.format.combine(
 				winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
 				winston.format.colorize(),
@@ -79,30 +69,25 @@ export const createLogger = async () => {
 
 	// File transports for development only
 	if (process.env.NODE_ENV === "development") {
-		transports.push(
-			new DailyRotateFile({
-				filename: "logs/%DATE%.log",
-				datePattern: "YYYY-MM-DD",
-				maxSize: "10m", // 10mb
-				maxFiles: "7d", // 7 days
-				level: "info",
-				format: winston.format.combine(
-					winston.format.timestamp(),
-					winston.format.json()
-				),
-			}),
-			new winston.transports.File({
-				filename: "logs/error.log",
-				level: "error",
-				maxsize: 5242880, // 5MB
-				format: winston.format.combine(
-					winston.format.timestamp(),
-					winston.format.json()
-				),
-			})
-		)
+		// Iterate over log levels and create file transports for different folders
+		Object.keys(logLevels.levels).forEach((level) => {
+			transports.push(
+				new DailyRotateFile({
+					filename: `logs/${level}/%DATE%.log`,
+					datePattern: "YYYY-MM-DD",
+					maxSize: "5m", // 5MB
+					maxFiles: "7d", // 7 days
+					level: level,
+					format: winston.format.combine(
+						winston.format.timestamp(),
+						winston.format.json()
+					),
+				})
+			)
+		})
 	}
 
+	// Return logger instance
 	return winston.createLogger({
 		levels: logLevels.levels,
 		transports,
